@@ -4,7 +4,7 @@ const signUpMiddleware = (req, res, next) => {
   const { name, email, password } = req.body;
   console.log(req.body);
   if (!name || !email || !password) {
-    res.status(401).json({ error: "Invalid Input Signup" });
+    res.status(401).json({ error: "Invalid Signup Inputs" });
   } else {
     next();
   }
@@ -16,7 +16,7 @@ const loginMiddleware = (req, res, next) => {
   const { email, password } = req.body;
   console.log(req.body);
   if (!email || !password) {
-    res.status(401).json({ error: "Invalid Input" });
+    res.status(401).json({ error: "Invalid Login Inputs" });
   } else {
     next();
   }

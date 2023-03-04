@@ -1,8 +1,10 @@
+const User = require("../models/userSchema");
+
 // Signup Controller
 // PATH -> /api/auth/signup
-// API Type -> Public
+// API Type -> PUBLIC
 const signUpUser = async (req, res) => {
-  console.log("User Signed Up");
+  res.json({ msg: "Success" });
 };
 
 module.exports = {
