@@ -7,6 +7,8 @@ const dotenv = require("dotenv").config();
 // Importing Files
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
+const { errorHandler } = require("./middlewares/errorMiddleware");
+
 mongoose.set("strictQuery", true);
 
 // Connecting to MongoDB Service
@@ -21,9 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/auth", authRoutes);
 
 // If URL doesn't match
-app.use((req, res) => {
-  res.status(400).json({ error: "Invalid End point" });
-});
+app.use(errorHandler);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Connected at PORT -> ${PORT}`);

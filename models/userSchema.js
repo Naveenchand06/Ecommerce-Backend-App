@@ -34,5 +34,6 @@ const userSchema = mongoose.Schema({
   },
   // Cart
 });
+
 const User = mongoose.model("User", userSchema);
 module.exports = User;
