@@ -3,6 +3,7 @@ const PORT = 3000;
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
+const colors = require("colors");
 
 // Importing Files
 const connectDB = require("./config/db");
